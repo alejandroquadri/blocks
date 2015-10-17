@@ -6,8 +6,10 @@ $(function(){
     event.preventDefault();
 
     var form = $(this);
+    console.log(form);
     var cityData = form.serialize();
-
+    console.log(cityData);
+    
     $('.alert').hide();
 
     $.ajax({
