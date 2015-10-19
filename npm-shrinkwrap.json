@@ -347,6 +347,18 @@
           "resolved": "https://registry.npmjs.org/vary/-/vary-1.0.1.tgz"
         }
       }
+    },
+    "redis": {
+      "version": "2.2.4",
+      "from": "redis@*",
+      "resolved": "https://registry.npmjs.org/redis/-/redis-2.2.4.tgz",
+      "dependencies": {
+        "double-ended-queue": {
+          "version": "2.1.0-0",
+          "from": "double-ended-queue@>=2.1.0-0 <3.0.0",
+          "resolved": "https://registry.npmjs.org/double-ended-queue/-/double-ended-queue-2.1.0-0.tgz"
+        }
+      }
     }
   }
 }

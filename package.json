@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test.js"
+    "test": "NODE_ENV=test mocha -w app.js test.js"
   },
-  "author": "",
+  "author": "Alejandro Quadri",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.14.1",
-    "express": "^4.13.3"
+    "connect-redis": "^3.0.1",
+    "express": "^4.13.3",
+    "redis": "https://registry.npmjs.org/redis/-/redis-2.2.4.tgz"
   },
   "devDependencies": {
     "mocha": "^2.3.3",
