@@ -19,11 +19,6 @@ if (process.env.REDISTOGO_URL) {
     //lo que hace aca es que segun el largo de la palabra le tire un numero distinto
     //si se elige la dabase development el numero va ser distinto que por ej, test
 }
-
-
-
-
-
 //!! FIN conexion REDIS
 
 app.get('/cities', function(request, response){
