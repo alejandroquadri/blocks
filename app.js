@@ -14,14 +14,16 @@ if (process.env.REDISTOGO_URL) {
   client.auth(rtg.auth.split(":")[1]);
 } else {
     var client = redis.createClient();
+    client.select((process.env.NODE_ENV || 'development').length);
+    //con este comando se elige que database se esta usando.
+    //lo que hace aca es que segun el largo de la palabra le tire un numero distinto
+    //si se elige la dabase development el numero va ser distinto que por ej, test
 }
 
 
 
-client.select((process.env.NODE_ENV || 'development').length);
-//con este comando se elige que database se esta usando.
-//lo que hace aca es que segun el largo de la palabra le tire un numero distinto
-//si se elige la dabase development el numero va ser distinto que por ej, test
+
+
 //!! FIN conexion REDIS
 
 app.get('/cities', function(request, response){
