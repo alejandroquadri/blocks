@@ -34,6 +34,10 @@ app.get('/cities', function(request, response){
 
 app.post('/cities',urlencode, function(request, response){
   var newCity = request.body;
+  if(!newCity.name || !newCity.description){
+    response.sendStatus(400);
+    return false;
+  }
   client.hset('cities',newCity.name,newCity.description, function(error){
     if (error) throw error;
     console.log('pasa por el post');
