@@ -1,4 +1,5 @@
 // ./node_modules/mocha/bin/mocha -w app.js test.js
+// NODE_ENV=test y lo que sigue para aclarar que estamos en ambiente test
 
 var express = require ('express');
 var app = express();
@@ -39,4 +40,15 @@ app.post('/cities',urlencode, function(request, response){
     response.status(201).json(newCity.name); //si pones sendStatus, como estaba antes termina el call. Si depues viene json, va status.
   })
 });
+
+app.delete('/cities/:name',function(request,response){
+  console.log(request.params.name);
+  //console.log(request.body.name);
+  client.hdel('cities', request.params.name, function(error){
+    if (error) throw error;
+    console.log('pasa por el delete');
+    response.sendStatus(204);
+  })
+});
+
 module.exports = app;
